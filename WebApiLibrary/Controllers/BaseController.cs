@@ -18,35 +18,35 @@ namespace WebApiLibrary.Controllers
 
         // GET: api/<GameServersController>
         [HttpGet]
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             return _service.GetList();
         }
 
         // GET api/<GameServersController>/5
         [HttpGet("{id}")]
-        public T Get(string id)
+        public virtual T Get(string id)
         {
             return _service.Get(id);
         }
 
         // POST api/<GameServersController>
         [HttpPost]
-        public void Post([FromBody] T value)
+        public virtual void Post([FromBody] T value)
         {
             _service.Add(value);
         }
 
         // PUT api/<GameServersController>/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] T value)
+        public virtual void Put(string id, [FromBody] T value)
         {
             _service.Change(id, value);
         }
 
         // DELETE api/<GameServersController>/5
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public virtual void Delete(string id)
         {
             _service.Delete(id);
         }
